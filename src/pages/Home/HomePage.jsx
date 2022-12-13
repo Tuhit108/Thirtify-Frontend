@@ -8,7 +8,7 @@ const HomePage = () => {
     return (
         <React.Fragment>
             <Helmet>
-                <title>Home | ENational Library</title>
+                <title>Home | Thirtify</title>
             </Helmet>
             <div id="main">
                 <Header />
