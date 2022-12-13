@@ -28,7 +28,7 @@ function Login({ _login, history }) {
             if (res && res.code === 0) {
                 message.success("Đăng nhập thành công");
                 setTimeout(() => {
-                    window.location.href = "/home";
+                    window.location.href = "/Home";
                 }, 1000);
             } else {
                 message.error(res.message);

@@ -1,5 +1,5 @@
 import { path } from '../constant/path';
-import Home from '../pages/home/home';
+import Home from '../pages/Home/HomePage';
 import Login from '../pages/login/login';
 import Register from '../pages/register/register';
 
