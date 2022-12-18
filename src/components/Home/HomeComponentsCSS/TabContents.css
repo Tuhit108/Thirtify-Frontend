@@ -1,0 +1,39 @@
+.tabs {
+  display: flex;
+  position: relative;
+}
+
+.book-content .tabs .tab-item {
+  min-width: 80px;
+  padding: 16px 20px 11px 20px;
+  font-size: 1.2rem;
+  background-color: #fff;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.book-content .tabs .tab-item:hover {
+  background-color: rgba(194, 53, 100, 0.1);
+  color: deeppink;
+  border-bottom: 1px solid #000;
+}
+
+.book-content .tabs .tab-item.active {
+  color: deeppink;
+  border-bottom: 1px solid deeppink;
+}
+
+.books .tab-content {
+  padding: 28px 0;
+}
+
+.tab-pane {
+  color: #333;
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}

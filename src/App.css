@@ -56,3 +56,9 @@ header {
   width: 100%;
   top: 0;
 }
+a {
+  text-decoration: none;
+}
+p {
+  text-decoration: none;
+}

@@ -3,3 +3,8 @@ export const IC_BAG = require('./icons/ic_bag.png')
 export const IC_NOTIFICATION = require('./icons/ic_notification.png')
 export const IC_DEFAULT = require('./icons/ic_user_default.png')
 export const IC_SEARCH = require('./icons/ic_search.png')
+
+export  const BANNER1 = require('./images/banner1.jpg')
+export  const BANNER2 = require('./images/banner2.png')
+export  const BANNER3 = require('./images/banner3.png')
+export  const DEFAULT_IMG = require('./images/default_img.jpg')
