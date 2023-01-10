@@ -18,7 +18,8 @@ const ProductCard = ({ product }) => {
                     <p className="product-item-name" title={`${product.name}`}>
                         {product.name}
                     </p>
-                    <p className="product-item-author">{product.price}</p>
+                    <p className="product-item-price">{product.price}</p>
+                    <p className="product-item-time">{product.time}</p>
                 </Link>
             </div>
         </React.Fragment>
