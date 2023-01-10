@@ -1,7 +1,7 @@
 .card-img-top {
     position: relative;
     height: 0;
-    padding-bottom: 140%;
+    padding-bottom: 120%;
 }
 
 .card-img-top .product-item-img {
@@ -15,8 +15,12 @@
     background-position: center center;
 }
 .card {
+    /*padding: 6px!important;*/
     border: none;
     box-shadow: 0 0 4px rgb(0 0 0 / 30%);
+
+}
+product-list-item {
 
 }
 .product-list-item:hover {
@@ -27,11 +31,12 @@
 
 .product-item-name {
     font-family: Segoe UI;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: #222;
 }
 
 .product-item-price {

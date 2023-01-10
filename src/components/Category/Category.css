@@ -1,6 +1,5 @@
 .category-item {
-    justify-content: center;
-    align-items: center;
+
 }
 .category-item-img {
     position: relative;
@@ -26,4 +25,10 @@
     margin-left: auto;
     color: #222222;
     margin-top: 16px;
+    text-align: center;
+}
+.category{
+    width: 12.5%;
+    padding-right: 24px;
+    padding-left: 24px;
 }

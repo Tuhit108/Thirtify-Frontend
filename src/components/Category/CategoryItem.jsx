@@ -6,7 +6,7 @@ import './Category.css';
 const CategoryItem = (category ) => {
     return (
         <React.Fragment>
-            <div className="col-lg-1 ">
+            <div className="category">
                 <Link to={``} className="category-item">
                     <div className="category-item-img">
                         <div

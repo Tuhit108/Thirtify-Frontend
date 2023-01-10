@@ -1,7 +1,6 @@
 import { path } from '../constant/path';
 import Home from '../pages/Home/HomePage';
-import Login from '../pages/login/login';
-import Register from '../pages/register/register';
+import SearchPage from "../pages/Search/SearchPage";
 
 export const PageRoutes = [
   {
@@ -9,11 +8,8 @@ export const PageRoutes = [
     element: Home,
   },
   {
-    path: path.LOGIN,
-    element: Login,
+    path: path.SEARCH,
+    element: SearchPage,
   },
-  {
-    path: path.REGISTER,
-    element: Register,
-  },
+
 ];

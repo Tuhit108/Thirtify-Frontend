@@ -17,7 +17,7 @@ const Header = () => {
                     <div className="nav-header">
                         <div className="logo">
                             <Link to="/">
-                                <img src="https://static.chotot.com/storage/marketplace/transparent_logo.png"></img>
+                                ThirtifyShop
                             </Link>
                         </div>
                         <div className="navBar">
