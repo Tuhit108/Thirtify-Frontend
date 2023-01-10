@@ -1,4 +1,4 @@
-import './productDetail.css'
+import './ProductDetail.css'
 import Slider from '../../component/slider/slider'
 import sliderData from '../../data/sliderData/sliderData'
 import '../../assets/FontAwesome.Pro.6.1.1/fontawesome-pro-6.1.1-web/css/all.min.css'

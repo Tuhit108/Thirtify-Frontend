@@ -1,8 +1,7 @@
-import './register.css'
+import './RegisterPage.css'
 import React, { useState } from "react";
 import { message } from "antd";
 import { Link } from 'react-router-dom'
-import Login from '../login/login'
 
 function Register({ _register, history }) {
     const [state, _setState] = useState({});

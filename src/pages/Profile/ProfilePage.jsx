@@ -1,6 +1,6 @@
-import './profile.css'
-import '../../../assets/FontAwesome.Pro.6.1.1/fontawesome-pro-6.1.1-web/css/all.min.css'
-import defaultAvatar from '../../../assets/images/default-avatar.png'
+import './ProfilePage.css'
+import '../../assets/FontAwesome.Pro.6.1.1/fontawesome-pro-6.1.1-web/css/all.min.css'
+import defaultAvatar from '../../assets/images/default-avatar.png'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 

@@ -1,12 +1,12 @@
 import { path } from '../constant/path';
-import Home from '../pages/auth/home/home';
-import Login from '../pages/auth/login/login';
-import Register from '../pages/auth/register/register';
-import ProductDetail from '../pages/productDetail/productDetail'
-import Profile from '../pages/auth/profile/profile';
-import ProfileEdit from '../pages/auth/profileEdit/profileEdit';
-import ProfileEditPassword from '../pages/auth/profileEditPassword/profileEditPassword';
-import CreatePost from '../pages/auth/createPost/createPost';
+import Home from '../pages/Home/HomePage';
+import Login from '../pages/Auth/Login/LoginPage';
+import Register from '../pages/Auth/Register/RegisterPage';
+import ProductDetail from '../pages/ProductDetail/ProductDetail'
+import Profile from '../pages/Profile/ProfilePage';
+import ProfileEdit from '../pages/ProfileEdit/ProfileEdit';
+import ProfileEditPassword from '../pages/ProfileEditPassword/ProfileEditPassword';
+import CreatePost from '../pages/CreatePost/CreatePost';
 
 export const PageRoutes = [
   {

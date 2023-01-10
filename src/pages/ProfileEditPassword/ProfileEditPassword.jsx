@@ -1,5 +1,5 @@
-import './profileEditPassword.css'
-import '../../../assets/FontAwesome.Pro.6.1.1/fontawesome-pro-6.1.1-web/css/all.min.css'
+import './ProfileEditPassword.css'
+import '../../assets/FontAwesome.Pro.6.1.1/fontawesome-pro-6.1.1-web/css/all.min.css'
 
 function ProfileEditPassword() {
     return (
