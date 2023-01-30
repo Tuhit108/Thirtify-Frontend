@@ -3,6 +3,9 @@
     height: 0;
     padding-bottom: 120%;
 }
+.product-card {
+    margin-bottom: 20px;
+}
 
 .card-img-top .product-item-img {
     position: absolute;

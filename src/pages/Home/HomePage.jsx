@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Helmet } from 'react-helmet';
 import Header from "../../components/Header";
 
@@ -7,6 +7,9 @@ import HomeBanners from "../../components/Home/HomeBanners";
 import {DEFAULT_IMG, DEFAULT_IMG2, DEFAULT_IMG3, DEFAULT_IMG4, MYPHAM_IMG, THOITRANG_IMG} from "../../assets";
 import ProductList from "../../components/Product/ProductList";
 import CategoryItem from "../../components/Category/CategoryItem";
+import {useAsyncFn} from "react-use";
+import {getAllProduct} from "../../store/products/function";
+import {useProduct, useProductIds} from "../../store/products";
 let products = [
     {
         id : 1,
@@ -61,6 +64,21 @@ let products = [
 console.log(products)
 
 const HomePage = () => {
+    const [page,setPage] = useState(1)
+    const [data,setData] = useState({})
+    const productIds = useProductIds()
+
+    const [{loading: refreshing}, getList] = useAsyncFn( async ()=>{
+        const res = await getAllProduct(page*24);
+        setData(res)
+        console.log("hihi",page,res);
+
+    },[page,data])
+    useEffect(()=>{
+        getList().then()
+        },
+        [page])
+
     return (
         <React.Fragment>
             <Helmet>
@@ -86,7 +104,7 @@ const HomePage = () => {
                     </div>
                     <div className="content-list">
 
-                        <ProductList products={products}/>
+                        <ProductList products={productIds}/>
                     </div>
 
                 </div>

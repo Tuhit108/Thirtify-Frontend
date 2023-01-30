@@ -7,6 +7,7 @@ import Profile from '../pages/Profile/ProfilePage';
 import ProfileEdit from '../pages/ProfileEdit/ProfileEdit';
 import ProfileEditPassword from '../pages/ProfileEditPassword/ProfileEditPassword';
 import CreatePost from '../pages/CreatePost/CreatePost';
+import SearchPage from "../pages/Search/SearchPage";
 
 export const PageRoutes = [
   {
@@ -32,6 +33,10 @@ export const PageRoutes = [
   {
     path: path.EDIT,
     element: ProfileEdit,
+  },
+  {
+    path: path.SEARCH,
+    element: SearchPage,
   },
   {
     path: path.PASSWORD,

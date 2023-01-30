@@ -1,5 +1,4 @@
 import './ProfilePage.css'
-import '../../assets/FontAwesome.Pro.6.1.1/fontawesome-pro-6.1.1-web/css/all.min.css'
 import defaultAvatar from '../../assets/images/default-avatar.png'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -17,7 +16,7 @@ function Profile() {
     const handlePreviewAvatar = (e) => {
         const file = e.target.files[0];
 
-        //Them property preview 
+        //Them property preview
         file.preview = URL.createObjectURL(file)
 
         setAvatar(file)

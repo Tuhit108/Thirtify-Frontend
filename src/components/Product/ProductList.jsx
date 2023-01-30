@@ -7,7 +7,7 @@ const ProductList = ({ products = [] }) => {
         <React.Fragment>
             <div className="row product-list" style={{backgroundColor: 'transparent'}}>
                 {products.map((product,index) => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard key={product} id={product} />
                 ))}
             </div>
         </React.Fragment>

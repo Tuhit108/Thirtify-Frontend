@@ -6,5 +6,6 @@ export const path = {
     PROFILE: '/profile',
     EDIT: '/profile/edit',
     PASSWORD: '/profile/password',
-    CREATEPOST: 'post/create'
+    CREATEPOST: 'post/create',
+    SEARCH:'/search'
   };
