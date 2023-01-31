@@ -1,0 +1,57 @@
+.order-content {
+    margin-top: 120px;
+    max-width: 936px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.order-section {
+    width: 80%;
+    background-color: white;
+    border-radius: 4px;
+}
+.order-status {
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.status-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.status-name{
+    font-weight: 700;
+    margin: 8px 0;
+}
+.status-icon {
+}
+.buyer-info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px;
+}
+.buyer-info-input,
+.buyer-address-input {
+    margin: 6px;
+    border-radius: 4px;
+    border-width: 1px;
+    padding: 6px;
+    border-color: rgb(118, 118, 118, 0.3);
+}
+.delivery {
+    padding:6px 12px;
+}
+.payment-section{
+    margin: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #f4f4f4;
+}
+.order-confirm{
+    margin-top: 24px;
+    margin-left: 12px;
+    margin-right: 12px;
+}

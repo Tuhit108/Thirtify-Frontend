@@ -4,6 +4,7 @@ export const IC_NOTIFICATION = require('./icons/ic_notification.png')
 export const IC_DEFAULT = require('./icons/ic_user_default.png')
 export const IC_SEARCH = require('./icons/ic_search.png')
 export const IC_FILTER = require('./icons/ic_filter.png')
+export const IC_BILL = require('./icons/ic_bill.png')
 
 export  const BANNER1 = require('./images/banner1.jpg')
 export  const BANNER2 = require('./images/banner2.png')

@@ -7,5 +7,6 @@ export const path = {
     EDIT: '/profile/edit',
     PASSWORD: '/profile/password',
     CREATEPOST: 'post/create',
-    SEARCH:'/search/:query'
+    SEARCH:'/search/:query',
+    ORDER:'/order/:productId'
   };

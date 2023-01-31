@@ -4,7 +4,7 @@ import './Header.css';
 
 import {IC_BAG, IC_DEFAULT, IC_HOME, IC_NOTIFICATION, IC_SEARCH} from "../../assets";
 import {Link} from "react-router-dom";
-import {message} from "antd";
+import {Dropdown, message} from "antd";
 
 const Header = () => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -19,6 +19,30 @@ const Header = () => {
         }
         else message.error("Vui lòng nhập từ khóa")
     },[text])
+    const logOut = useCallback(()=>{
+        localStorage.removeItem("user");
+        setTimeout(() => {
+            window.location.href = "/login";
+        }, 1000);
+    },[])
+    const items = [
+        {
+            key: '1',
+            label: (
+                <Link >
+                    Thông tin tài khoản
+                </Link>
+            ),
+        },
+        {
+            key: '2',
+            label: (
+                <div onClick={logOut}>
+                    Đăng xuất
+                </div>
+            ),
+        },
+    ];
 
 
     return (<React.Fragment>
@@ -32,10 +56,10 @@ const Header = () => {
                         </div>
                         <div className="navBar">
                             <div className="nav-item">
-                                <Link to="/" className="nav-item-child">
+                                <div  className="nav-item-child">
                                     <img className="nav-header-icon" src={IC_HOME}/>
                                     <span>Trang chủ</span>
-                                </Link>
+                                </div>
                             </div>
                             <div className="nav-item">
                                 <Link to="/" className="nav-item-child">
@@ -50,13 +74,19 @@ const Header = () => {
                                 </Link>
                             </div>
                             <div className="nav-item">
-                                {user ? (<Link to="/" className="auth-item-child">
-                                    <img className="auth-icon" src={IC_DEFAULT}/>
-                                    <span> {user?.fullName ? user?.fullName : 'Xin chào'}</span>
-                                </Link>) : (<Link to="/login" className="auth-item-child">
+                                {user ? (
+                                        <Dropdown menu={{ items }} placement="bottomLeft">
+                                            <Link to="/" className="auth-item-child">
+                                                <img className="auth-icon" src={IC_DEFAULT}/>
+                                                <span> {user?.fullName ? user?.fullName : 'Xin chào'}</span>
+                                            </Link>
+                                        </Dropdown>
+
+                                ) : (
+                                    <Link to="/login" className="auth-item-child">
                                     <img className="auth-icon" src={IC_DEFAULT}/>
                                     <span>Đăng nhập</span>
-                                </Link>)}
+                                    </Link>)}
 
 
                             </div>

@@ -8,6 +8,7 @@ import ProfileEdit from '../pages/ProfileEdit/ProfileEdit';
 import ProfileEditPassword from '../pages/ProfileEditPassword/ProfileEditPassword';
 import CreatePost from '../pages/CreatePost/CreatePost';
 import SearchPage from "../pages/Search/SearchPage";
+import OrderPage from "../pages/Order/OrderPage";
 
 export const PageRoutes = [
   {
@@ -45,5 +46,9 @@ export const PageRoutes = [
   {
     path: path.CREATEPOST,
     element: CreatePost,
+  },
+  {
+    path: path.ORDER,
+    element: OrderPage,
   },
 ];

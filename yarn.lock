@@ -4770,9 +4770,9 @@ flat-cache@^3.0.4:
     flatted "^3.1.0"
     rimraf "^3.0.2"
 
-flatlist-react@^1.5.7:
+flatlist-react@^1.5.8:
   version "1.5.8"
-  resolved "https://registry.npmjs.org/flatlist-react/-/flatlist-react-1.5.8.tgz"
+  resolved "https://registry.yarnpkg.com/flatlist-react/-/flatlist-react-1.5.8.tgz#d1cfe3e41c420447ad5961a142e46e6bb680edf5"
   integrity sha512-sB5XFAouuVky70a2GdWyxPH6BSxwC7cBgQgvmLb0Mnku7vd7EEEvpMNeJkM3qBe8dYzJkz0J2SPptsIQatUsQQ==
   dependencies:
     prop-types "^15.8.1"

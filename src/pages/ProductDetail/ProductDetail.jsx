@@ -4,13 +4,14 @@ import sliderData from '../../data/sliderData/sliderData'
 import Header from "../../components/Header";
 import {useAsyncFn} from "react-use";
 import {getAllProduct, getProductDetail} from "../../store/products/function";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {useCallback, useEffect, useState} from "react";
 import {formatDate} from "../../utils/formatDate";
 import {message} from "antd";
 import {getUserById} from "../../store/user/function";
 function ProductDetail() {
     const [seller,setSeller] = useState({})
+    const user = JSON.parse(localStorage.getItem("user"));
     const {id} = useParams()
     const [product,setProduct]=useState(
         {
@@ -139,7 +140,9 @@ function ProductDetail() {
                                 <div className="contact-title">Liên hệ với người bán</div>
                                 <div className="contact-container">
                                     <div className="buy">
-                                        <div className="buy-text">MUA NGAY</div>
+                                        <Link to={user?`/order/${product._id}`:'/login'} >
+                                            <div className="buy-text">MUA NGAY</div>
+                                        </Link>
                                     </div>
                                     <div className="contact-phone">
                                         <div className="contact-phone-number">
