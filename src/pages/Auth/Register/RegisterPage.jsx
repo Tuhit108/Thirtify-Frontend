@@ -2,6 +2,8 @@ import './RegisterPage.css'
 import React, { useState } from "react";
 import { message } from "antd";
 import { Link } from 'react-router-dom'
+import Header from "../../../components/Header";
+import {requestLogin, requestRegister} from "../../../store/constant/funtions";
 
 function Register({ _register, history }) {
     const [state, _setState] = useState({});
@@ -9,45 +11,53 @@ function Register({ _register, history }) {
         _setState((pre) => ({ ...pre, ...data }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit =async (e) => {
         e.preventDefault();
-        const { username, password } = state;
+        const { username, password,phone,email } = state;
         setState({ clickSubmit: true });
         if (!username) {
-            message.error("Vui lòng nhập SĐT");
+            message.error("Vui lòng nhập username");
             return;
         }
         if (!password) {
             message.error("Vui lòng nhập mật khẩu");
             return;
         }
-        _register({ username, password }).then((res) => {
-            if (res && res.code === 0) {
-                message.success("Đăng ký thành công. Vui lòng đăng nhập vào hệ thống");
+        if (!phone) {
+            message.error("Vui lòng nhập sđt");
+            return;
+        }
+        if (!email) {
+            message.error("Vui lòng nhập email");
+            return;
+        }
 
-                setTimeout(() => {
-                    window.location.href = "/login";
-                }, 1000);
-            } else {
-                message.error(res.message);
-            }
-        });
+        const res = await requestRegister({
+            email: email,
+            password: password,
+            fullName : username,
+            phone : phone
+        })
+        console.log("xong",res)
+        if (res && res.code === 1) {
+
+            message.success("Đăng ký thành công, đăng nhập tài khoản của bạn");
+            setTimeout(() => {
+                window.location.href = "/login";
+            }, 1000);
+        } else {
+            message.error(res.data);
+        }
     };
     return (
         <div className="register">
             {/* <header></header> */}
+            <Header/>
             <div className="register-container">
                 <ul className="register-option">
                     <li className="register-option-home">
-                        <Link to="/home">Trang chủ</Link>
+                        <Link to="/home">Đăng ký</Link>
                         <span>{'>>'}</span>
-                    </li>
-                    <li className="register-option-login">
-                        <Link to="/login">Đăng nhập</Link>
-                        <span>{'>>'}</span>
-                    </li>
-                    <li>
-                        <p>&nbsp;Đăng ký</p>
                     </li>
                 </ul>
                 <main>
@@ -74,9 +84,9 @@ function Register({ _register, history }) {
                                     }
                                 >
                                     <input
-                                        type="tel"
+                                        type="text"
                                         className="input-phone-number"
-                                        placeholder="Nhập SĐT của bạn"
+                                        placeholder="Tên đăng nhập của bạn"
                                         autocomplete="nope"
                                         required=""
                                         onChange={(e) => {
@@ -109,6 +119,53 @@ function Register({ _register, history }) {
                                 </div>
                                 <p className="input-down-invisible"></p>
                             </div>
+                            <div className="form-input">
+                                <div
+                                    // className="form-input-phone"
+                                    className={
+                                        state.clickSubmit && !state.password
+                                            ? "form-input-phone invalid"
+                                            : "form-input-phone"
+                                    }
+                                >
+                                    <input
+                                        type="tel"
+                                        className="input-phone-number"
+                                        placeholder="Nhập số điện thoại"
+                                        autoComplete="nope"
+                                        required=""
+                                        onChange={(e) => {
+                                            setState({phone: e.target.value});
+                                        }}
+
+                                    />
+                                </div>
+                                <p className="input-down-invisible"></p>
+                            </div>
+                            <div className="form-input">
+                                <div
+                                    // className="form-input-phone"
+                                    className={
+                                        state.clickSubmit && !state.password
+                                            ? "form-input-phone invalid"
+                                            : "form-input-phone"
+                                    }
+                                >
+                                    <input
+                                        type="text"
+                                        className="input-phone-number"
+                                        placeholder="Nhập email của bạn"
+                                        autoComplete="nope"
+                                        required=""
+                                        onChange={(e) => {
+                                            setState({email: e.target.value});
+                                        }}
+
+                                    />
+                                </div>
+                                <p className="input-down-invisible"></p>
+                            </div>
+
 
                             <button
                                 className="btn-register"
@@ -124,12 +181,12 @@ function Register({ _register, history }) {
                                 <a href="https://trogiup.chotot.com/nguoi-ban/hoat-dong/" target="_blank" rel="noreferrer">Điều khoản sử dụng </a>
                                 của ThirtiFy
                             </p>
-                            <small>hoặc sử dụng</small>
-                            <ul className="register-footer-icons">
-                                <li src="https://static.chotot.com/storage/assets/register/facebook.svg" class="icon facebook"></li>
-                                <li src="https://static.chotot.com/storage/assets/register/google.svg" class="icon google"></li>
-                                <li src="https://static.chotot.com/storage/assets/register/apple.svg" class="icon apple"></li>
-                            </ul>
+                            {/*<small>hoặc sử dụng</small>*/}
+                            {/*<ul className="register-footer-icons">*/}
+                            {/*    <li src="https://static.chotot.com/storage/assets/register/facebook.svg" class="icon facebook"></li>*/}
+                            {/*    <li src="https://static.chotot.com/storage/assets/register/google.svg" class="icon google"></li>*/}
+                            {/*    <li src="https://static.chotot.com/storage/assets/register/apple.svg" class="icon apple"></li>*/}
+                            {/*</ul>*/}
                             <p className="register-footer-register">Bạn đã có tài khoản?
                                 <Link to="/login"> Đăng nhập</Link>
                             </p>

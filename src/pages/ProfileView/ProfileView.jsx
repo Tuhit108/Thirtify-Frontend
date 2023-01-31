@@ -1,5 +1,4 @@
 import './ProfileView.css'
-import '../../assets/FontAwesome.Pro.6.1.1/fontawesome-pro-6.1.1-web/css/all.min.css'
 import { Link } from 'react-router-dom'
 
 function ProfileView() {

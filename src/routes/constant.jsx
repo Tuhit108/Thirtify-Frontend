@@ -10,6 +10,7 @@ import ProfileEditPassword from '../pages/ProfileEditPassword/ProfileEditPasswor
 import CreatePost from '../pages/CreatePost/CreatePost';
 import SearchPage from "../pages/Search/SearchPage";
 import OrderPage from "../pages/Order/OrderPage";
+import createProduct from "../pages/Product/CreateProduct";
 
 export const PageRoutes = [
   {
@@ -50,7 +51,7 @@ export const PageRoutes = [
   },
   {
     path: path.CREATEPOST,
-    element: CreatePost,
+    element: createProduct,
   },
   {
     path: path.ORDER,
