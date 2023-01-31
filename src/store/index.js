@@ -4,12 +4,15 @@ import {applyMiddleware, createStore, combineReducers} from 'redux';
 
 import { productReducer, setProductStore } from "./products";
 import {configureStore} from "@reduxjs/toolkit";
+import {constantReducer, constantSetStore} from "./constant";
+import {setUserStore, userReducer} from "./user";
 // const middlewares: any[] = [];
 
 
-const reducers = combineReducers({
-    product:productReducer
-});
+// const reducers = combineReducers({
+//     product:productReducer,
+//
+// });
 
 const persistConfig = {
   key: 'root',
@@ -18,9 +21,13 @@ const persistConfig = {
 
 export const store = configureStore({
   reducer: {
-      product:productReducer
+      product:productReducer,
+      constant: constantReducer,
+      user:userReducer,
   }
 });
 // export type RootState = ReturnType<typeof store.getState>;
 setProductStore(store)
+constantSetStore(store)
+setUserStore(store)
 

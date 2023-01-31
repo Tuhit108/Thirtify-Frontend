@@ -10,68 +10,19 @@ import CategoryItem from "../../components/Category/CategoryItem";
 import {useAsyncFn} from "react-use";
 import {getAllProduct} from "../../store/products/function";
 import {useProduct, useProductIds} from "../../store/products";
-let products = [
-    {
-        id : 1,
-        name : "Gà",
-        price : "200000đ",
-        img : DEFAULT_IMG,
-        time : "3 phút trước"
-
-    },
-    {
-        id : 2,
-        name : "Iphone 14pro Max",
-        price : "1600000đ",
-        img : DEFAULT_IMG4,
-        time : "3 phút trước"
-
-    },
-    {
-        id : 3,
-        name : "Tivi 800 inch",
-        price : "300000đ",
-        img : DEFAULT_IMG2,
-        time : "3 phút trước"
-
-    },
-    {
-        id : 4,
-        name : "G63",
-        price : "2100000đ",
-        img : DEFAULT_IMG3,
-        time : "3 phút trước"
-
-    },
-    {
-        id : 5,
-        name : "Gà",
-        price : "200000đ",
-        img : DEFAULT_IMG4,
-        time : "3 phút trước"
-
-    },
-    {
-        id :6,
-        name : "Macbook 2080 20TB",
-        price : "200000đ",
-        img : DEFAULT_IMG,
-        time : "3 phút trước"
-
-    },
-
-]
-console.log(products)
+import {useUser} from "../../store/constant";
 
 const HomePage = () => {
     const [page,setPage] = useState(1)
     const [data,setData] = useState({})
     const productIds = useProductIds()
+    const user = JSON.parse(localStorage.getItem("user"));
 
     const [{loading: refreshing}, getList] = useAsyncFn( async ()=>{
         const res = await getAllProduct(page*24);
         setData(res)
         console.log("hihi",page,res);
+        console.log("user",user)
 
     },[page,data])
     useEffect(()=>{

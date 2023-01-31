@@ -5,6 +5,7 @@ import './ProductCard.css';
 import {useProduct} from "../../store/products";
 import {DEFAULT_IMG, DEFAULT_IMG4} from "../../assets";
 import moment from 'moment'
+import {formatDate} from "../../utils/formatDate";
 
 const ProductCard = ({id}) => {
     const product = useProduct(id)
@@ -15,7 +16,7 @@ const ProductCard = ({id}) => {
                     <div className="card-img-top">
                         <div
                             className="product-item-img"
-                            style={{ backgroundImage: `url(${product.image?product.image:DEFAULT_IMG4})` }}
+                            style={{ backgroundImage: `url(${product.image?product.image[0]:DEFAULT_IMG4})` }}
                             title="This is a Product image"
                         ></div>
                     </div>
@@ -23,7 +24,7 @@ const ProductCard = ({id}) => {
                         {product.name?product.name:'default'}
                     </p>
                     <p className="product-item-price">{product?.price?product?.price:'Liên hệ'}</p>
-                    <p className="product-item-time">{moment(product?.createAt).format('DD/MM/YYYY')}</p>
+                    <p className="product-item-time">{formatDate(product?.createAt)}</p>
                 </Link>
             </div>
         </React.Fragment>

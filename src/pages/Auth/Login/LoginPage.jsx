@@ -7,15 +7,17 @@ import { useRouteMatch } from 'react-router-dom'
 import logoFb from '../../../assets/images/logo_facebook.svg'
 import logoGg from '../../../assets/images/logo_google.svg'
 import logoAp from '../../../assets/images/logo_apple.svg'
+import Header from "../../../components/Header";
+import {requestLogin} from "../../../store/constant/funtions";
 
-function Login({ _login, history }) {
+function Login({  }) {
 
     const [state, _setState] = useState({});
     const setState = (data) => {
         _setState((pre) => ({ ...pre, ...data }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const { username, password } = state;
         setState({ clickSubmit: true });
@@ -27,30 +29,37 @@ function Login({ _login, history }) {
             message.error("Vui lòng nhập mật khẩu");
             return;
         }
-        _login({ username, password }).then((res) => {
-            if (res && res.code === 0) {
-                message.success("Đăng nhập thành công");
-                setTimeout(() => {
-                    window.location.href = "/home";
-                }, 1000);
-            } else {
-                message.error(res.message);
-            }
-        });
+        const res = await requestLogin({
+            account: username,
+            password: password
+        })
+        console.log("xong",res)
+        if (res && res.code === 1) {
+
+            message.success("Đăng nhập thành công");
+            setTimeout(() => {
+                window.location.href = "/";
+            }, 1000);
+        } else {
+            message.error(res.data);
+        }
     };
+
+        // _login({ username, password }).then((res) => {
+
+        // });
+    // };
 
     return (
         <div>
+            <Header/>
             <div className="login">
                 {/* <header></header> */}
                 <div className="login-container">
                     <ul className="login-option">
                         <li className="login-option-home">
-                            <Link to="/home">Trang chủ</Link>
+                            <Link to="">Đăng nhập</Link>
                             <span>{'>>'}</span>
-                        </li>
-                        <li>
-                            <p>&nbsp;Đăng nhập</p>
                         </li>
                     </ul>
                     <main>
@@ -77,7 +86,7 @@ function Login({ _login, history }) {
                                         }
                                     >
                                         <input
-                                            type="tel"
+                                            type="text"
                                             className="input-phone-number"
                                             placeholder="Nhập SĐT của bạn"
                                             autocomplete="nope"
@@ -120,15 +129,6 @@ function Login({ _login, history }) {
                             </form>
 
                             <div className="login-footer">
-                                <p className="login-footer-forget-password">
-                                    <a href="/forget-password">Bạn quên mật khẩu?</a>
-                                </p>
-                                <small>hoặc sử dụng</small>
-                                <ul className="login-footer-icons">
-                                    <li src={logoFb} class="icon facebook"></li>
-                                    <li src={logoGg} class="icon google"></li>
-                                    <li src={logoAp} class="icon apple"></li>
-                                </ul>
                                 <p className="login-footer-register">Chưa có tài khoản?
                                     <Link to="/register"> Đăng ký ngay</Link>
                                 </p>

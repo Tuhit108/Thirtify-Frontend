@@ -1,17 +1,23 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 
 import './Header.css';
 
 import {IC_BAG, IC_DEFAULT, IC_HOME, IC_NOTIFICATION, IC_SEARCH} from "../../assets";
 import {Link} from "react-router-dom";
-import {Button} from "antd";
 
 const Header = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const [text, setText] = useState("")
+    const onSearch = useCallback((e)=>{
+        e.preventDefault();
+        console.log("text",text)
+        setTimeout(() => {
+            window.location.href = `/search/${text}`;
+        }, 1000);
+    },[text])
 
 
-
-    return (
-        <React.Fragment>
+    return (<React.Fragment>
             <div className="header">
                 <div className="header-section1">
                     <div className="nav-header">
@@ -40,10 +46,15 @@ const Header = () => {
                                 </Link>
                             </div>
                             <div className="nav-item">
-                                <Link to="/" className="auth-item-child">
+                                {user ? (<Link to="/" className="auth-item-child">
+                                    <img className="auth-icon" src={IC_DEFAULT}/>
+                                    <span> {user?.fullName ? user?.fullName : 'Xin chào'}</span>
+                                </Link>) : (<Link to="/login" className="auth-item-child">
                                     <img className="auth-icon" src={IC_DEFAULT}/>
                                     <span>Đăng nhập</span>
-                                </Link>
+                                </Link>)}
+
+
                             </div>
 
                         </div>
@@ -53,8 +64,11 @@ const Header = () => {
                     <div className="nav-header">
                         <div className="search-view">
                             <input className="search-input" autoComplete="off" placeholder="Tìm kiếm "
-                                   type="text"  />
-                            <button aria-label="Search Button Desktop" className="search-button">
+                                   type="text"
+                                   onChange={(e) => {
+                                       setText(e.target.value);
+                                   }}/>
+                            <button aria-label="Search Button Desktop" className="search-button" onClick={onSearch}>
                                 <img src={IC_SEARCH} className="search-icon"/>
                             </button>
                         </div>
