@@ -3,6 +3,7 @@ export const path = {
     LOGIN: '/login',
     REGISTER: '/register',
     PRODUCTDETAIL: '/product/:id',
+    PROFILEVIEW: 'profileview',
     PROFILE: '/profile',
     EDIT: '/profile/edit',
     PASSWORD: '/profile/password',
