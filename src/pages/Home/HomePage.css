@@ -1,6 +1,5 @@
 .content {
-    background-color: white;
-
+max-width: 70%;
 }
 .content-header{
     font-size: 17px;
@@ -14,7 +13,7 @@
     color: rgb(34, 34, 34);
 }
 .content-list{
-    height: 1000px;
+
 }
 .categories-list {
     display: flex;

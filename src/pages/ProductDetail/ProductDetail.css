@@ -1,0 +1,428 @@
+* {
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, Roboto, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    line-height: 1.5;
+    color: #222;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-family: Helvetica,Arial,Roboto,sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #222;
+}
+
+
+.product {
+    position: relative;
+    width: 980px;
+    margin: 0;
+    padding: 0;
+    top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.detail {
+    width: 100%;
+    min-height: 60vh;
+    /* background: #fff; */
+    /* border: 1px solid #e5e5e5; */
+    border-top: none;
+}
+
+.col-md-8 {
+    width: 66.66666667%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* .img-wrapper {
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    background: url(https://static.chotot.com/storage/logo/svg/chotot-logo-text.svg) 50% no-repeat;
+    background-color: #eee;
+    background-size: 50% auto;
+}
+
+.slick-slider {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: translateZ(0);
+}
+
+.btn-pre {
+    padding: 0 13px 0 10px;
+    left: 0;
+    border-radius: 0 5px 5px 0;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+    background: #000;
+    opacity: .3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    transform: translateZ(0);
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 -6px;
+} */
+
+.inf {
+    background-color: #fff;
+    margin-top: 6px;
+    border-radius: 4px;
+}
+
+.inf-container {
+    padding: 0 12px;
+}
+
+.inf-title,
+.description-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0;
+    padding-top: 10px;
+}
+
+.inf-price {
+    margin-bottom: 10px;
+}
+
+.inf-price-container {
+    background-color: transparent;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
+    padding: 0;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.inf-price-left {
+
+}
+
+.price {
+    font-size: 16px;
+    color: #c90927;
+    font-weight: 700;
+    width: 100%;
+}
+
+.inf-price-right {
+    display: flex;
+    align-items: center;
+}
+
+.share {
+
+}
+
+.btn-share {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 10px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.btn-icon-share,
+.btn-icon-save {
+    margin-right: 5px;
+}
+
+.btn-icon-saved {   /*khi da luu tin*/
+    color: #d10922;
+}
+
+.btn-share-text,
+.btn-save-text {
+    font-size: 12px;
+}
+
+.save {
+
+}
+
+.btn-save {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.inf-location {
+    display: flex;
+    align-items: start;
+}
+
+.inf-location-icon {
+    margin-right: 8px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.inf-time {
+    display: flex;
+    align-items: start;
+    margin: 6px 0;
+}
+
+.inf-time-icon,
+.inf-conf-icon {
+    font-size: 20px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.inf-location-text,
+.inf-time-text,
+.inf-conf-text {
+    font-size: 14px;
+    color: #777;
+}
+
+.inf-conf {
+    display: flex;
+    align-items: start;
+    margin: 6px 0;
+    padding-bottom: 12px;
+}
+
+.description {
+    background-color: #fff;
+    padding: 0 12px 12px 12px;
+}
+
+.description-text {
+    overflow-wrap: break-word;
+    text-align: justify;
+    white-space: pre-line;
+    font-size: 14px;
+}
+
+.col-md-4 {
+    width: 33.33333333%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.seller {
+    display: flex;
+    padding: 12px;
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.img-avt {
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+    border: 1px solid #ccc
+}
+
+.pro {
+    padding-left: 8px;
+    /* width: 10px; */
+}
+
+.pro-flex {
+    display: flex;
+    flex-direction: space-around;
+}
+
+.name-store {
+    width: 110px;
+    font-weight: 700;
+    font-size: 14px;
+    /* margin-right: 6px; */
+    margin: 5px 5px 3px 0;
+}
+
+.btn-view {
+    font-size: 12px;
+    border-radius: 16px;
+    color: #FE9900;
+    border: 1px solid #FE9900;
+    background-color: #fff;
+}
+
+.btn-view:hover {
+    background-color: rgb(220, 216, 216)
+}
+
+.icon-btn-view {
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+.store {
+    font-size: 12px;
+    color: #9b9b9b;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+
+}
+
+.icon-store {
+    vertical-align: middle;
+}
+
+.status-store {
+    font-size: 12px;
+    color: #9b9b9b;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+}
+
+.bullet-online {
+    color: #9b9b9b;
+    width: 16px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.status-online {
+    color: #9b9b9b;
+    text-align: center;
+    font-size: 12px;
+}
+
+.contact {
+    padding: 12px;
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.contact-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #222;
+    padding: 12px 12px 12px 0;
+}
+
+.buy {
+    margin-bottom: 10px;
+}
+
+.buy-text {
+    font-weight: 700;
+    margin-bottom: 0px;
+    text-align: center;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 8px 10px;
+    border-radius: 4px;
+    user-select: none;
+    font-size: 13px;
+    transition: background-color 200ms ease-in-out 0s;
+    color: rgb(255, 255, 255);
+    background-color: #589f39;
+}
+
+.buy-text:hover {
+    background-color: #336e19;
+}
+
+
+.contact-phone {
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    align-items: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    user-select: none;
+    font-size: 13px;
+    transition: background-color 200ms ease-in-out 0s;
+    color: #589f39;
+    background-color: rgb(255, 255, 255);
+}
+
+.contact-phone:hover {
+    background-color: #ccc;
+}
+
+.contact-phone-number {
+    display: flex;
+    align-items: center;
+}
+
+.icon-phone {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.op {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 14px 0;
+}
+
+.op-support,
+.op-warning {
+    display: flex;
+    align-items: center;
+    color: #777;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.icon-support,
+.icon-warning {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 24px;
+}
