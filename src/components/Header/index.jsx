@@ -4,6 +4,7 @@ import './Header.css';
 
 import {IC_BAG, IC_DEFAULT, IC_HOME, IC_NOTIFICATION, IC_SEARCH} from "../../assets";
 import {Link} from "react-router-dom";
+import {message} from "antd";
 
 const Header = () => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -11,9 +12,12 @@ const Header = () => {
     const onSearch = useCallback((e)=>{
         e.preventDefault();
         console.log("text",text)
-        setTimeout(() => {
-            window.location.href = `/search/${text}`;
-        }, 1000);
+        if(text){
+            setTimeout(() => {
+                window.location.href = `/search/${text}`;
+            }, 1000);
+        }
+        else message.error("Vui lòng nhập từ khóa")
     },[text])
 
 

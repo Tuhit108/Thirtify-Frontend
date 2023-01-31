@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Helmet } from 'react-helmet';
 import Header from "../../components/Header";
 import FlatList from 'flatlist-react';
@@ -7,63 +7,29 @@ import './index.css';
 import {DEFAULT_IMG, DEFAULT_IMG2, DEFAULT_IMG3, DEFAULT_IMG4, IC_FILTER} from "../../assets";
 import SearchItem from "../../components/Search/SearchItem";
 import {Select} from 'antd'
-
-let products = [
-    {
-        id : 1,
-        name : "Gà",
-        price : "200000đ",
-        img : DEFAULT_IMG2,
-        time : "3 phút trước"
-
-    },
-    {
-        id : 2,
-        name : "Iphone 14pro Max",
-        price : "1600000đ",
-        img : DEFAULT_IMG3,
-        time : "3 phút trước"
-
-    },
-    {
-        id : 3,
-        name : "Tivi 800 inch",
-        price : "300000đ",
-        img : DEFAULT_IMG4,
-        time : "3 phút trước"
-
-    },
-    {
-        id : 4,
-        name : "G63",
-        price : "2100000đ",
-        img : DEFAULT_IMG,
-        time : "3 phút trước"
-
-    },
-    {
-        id : 5,
-        name : "Gà",
-        price : "200000đ",
-        img : DEFAULT_IMG2,
-        time : "3 phút trước"
-
-    },
-    {
-        id :6,
-        name : "Macbook 2080 20TBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-        price : "200000đ",
-        img : DEFAULT_IMG3,
-        time : "3 phút trước"
-
-    },
-
-]
+import {useAsyncFn} from "react-use";
+import {getAllProduct, searchProduct} from "../../store/products/function";
+import {useEffect} from "react";
+import {useParams} from "react-router-dom";
 
 const SearchPage = () => {
+    const {query} = useParams()
+    const [list,setList] = useState([])
+
+    const [{loading: refreshing}, getList] = useAsyncFn( async ()=>{
+        const res = await searchProduct(query);
+        if (res && res.code === 1) {
+            setList(res.data)
+        }
+
+    },[query,list])
+    useEffect(()=>{
+            getList().then()
+        },
+        [query])
    const renderItem = (item) => {
         return (
-            <div key={item.id}>
+            <div key={item._id}>
                <SearchItem product={item}/>
             </div>
         );
@@ -139,9 +105,9 @@ const SearchPage = () => {
                     </div>
                     <div className="list-item">
                         <FlatList
-                            list={products}
+                            list={list}
                             renderItem={renderItem}
-                            renderWhenEmpty={() => <div>List is empty!</div>}
+                            renderWhenEmpty={() => <div>Không có kết quả</div>}
 
                         />
                     </div>

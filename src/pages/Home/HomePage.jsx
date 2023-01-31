@@ -20,11 +20,10 @@ const HomePage = () => {
 
     const [{loading: refreshing}, getList] = useAsyncFn( async ()=>{
         const res = await getAllProduct(page*24);
-        setData(res)
         console.log("hihi",page,res);
         console.log("user",user)
 
-    },[page,data])
+    },[page])
     useEffect(()=>{
         getList().then()
         },
